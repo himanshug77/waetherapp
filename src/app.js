@@ -1,6 +1,7 @@
 const path = require ('path')
 const express = require ('express')
 const app = express()
+const port = process.env.PORT || 3000
 const hbs = require('hbs')
 const publicDirectoryPath = path.join(__dirname,'../public')
 const partialPath = path.join(__dirname,'../template/partial')
@@ -63,6 +64,6 @@ app.get('/about',(req, res)=>{
     //     })
     
 
-app.listen (3000, ()=>{
-    console.log ('Server is running at 3000')
+app.listen (port, ()=>{
+    console.log ('Server is running at '+port)
 })
